@@ -2,9 +2,6 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many :votes, dependent: :destroy
   has_many :categories
-  has_attached_file :image,
-                    styles: { medium: '300x300>', thumb: '100x100>' }
-  validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png']
   validates :title, presence: true, length: { maximum: 50,
                                               too_long: 'Title can be maximum 50 characters long.' }
   validates :body, presence: true, length: { maximum: 2000,

@@ -1,6 +1,13 @@
-<%= form_with(model: user, local: true) do |form| %>
+<div class="container-fluid col d-flex justify-content-xl-center">
+<div class="card col d-flex ">
+
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>SIGNUP</strong>
+  </h5>
+  <p id="notice"><%= notice %></p>
+  <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
-    <div id="error_explanation">
+  <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
@@ -10,8 +17,22 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <div class="card-body px-lg-5 pt-0">
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;" action="#!">
+      <!-- Email -->
+      <div class="md-form mt-4">
+          <%= form.label :name %>
+          <%= form.text_field :name %>  
+      </div>
+      <div class="md-form mt-4">
+          <%= form.label :email %>
+          <%= form.text_field :email %>
+      </div>
+      <!-- Sign in button -->
+      <%= submit_tag "SIGN UP" %>
+    </form>
+   </div>
+<%end%>
+</div>
+</div>
