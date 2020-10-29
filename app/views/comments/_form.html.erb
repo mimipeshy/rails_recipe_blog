@@ -1,0 +1,22 @@
+<div class="card mb-3 wow fadeIn mt-5">
+    <div class="card-header font-weight-bold">Leave a reply</div>
+    <div class="card-body">
+     <%= form_for [ @article, @comment ] do |f| %>
+        <form>
+           <div class="form-group">
+                <label for="replyFormComment">Your comment</label>
+                 <%= f.text_area :body, class: 'form-control', id:'replyFormComment', rows: '5' %>
+               
+            </div>
+            <label for="replyFormName">Your name</label>
+            <%= f.text_field :name, class:'form-control', id:'replyForName' %>
+            <br>
+
+            <div class="text-center mt-4">
+            <%= f.submit 'Comment'%>
+              
+            </div>
+            <%end%>
+        </form>
+    </div>
+</div>
