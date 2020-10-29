@@ -5,8 +5,8 @@ class Article < ApplicationRecord
   has_many :recipe_categories, dependent: :destroy
   has_many :categories, through: :recipe_categories, dependent: :delete_all
   has_attached_file :image,
-                    # storage: :cloudinary,
-                    # path: ':id/:style/:filename',
+                    storage: :cloudinary,
+                    path: ':id/:style/:filename',
                     styles: { medium: '300x300>', thumb: '100x100>' }
   validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png']
   validates :title, presence: true, length: { maximum: 50,
