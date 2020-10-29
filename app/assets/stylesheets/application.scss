@@ -75,43 +75,43 @@ thead,
 tr,
 th,
 td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
 }
 
 body {
-    font-family: "poppins-medium", Arial, Helvetica, sans-serif;
-    line-height: 1;
-    color: black;
-    background: white;
+  font-family: "poppins-medium", Arial, Helvetica, sans-serif;
+  line-height: 1;
+  color: black;
+  background: white;
 }
 
 :focus {
-    outline: 0;
+  outline: 0;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 caption,
 th,
 td {
-    text-align: left;
-    font-weight: normal;
+  text-align: left;
+  font-weight: normal;
 }
 
 fieldset,
 img {
-    border: 0;
+  border: 0;
 }
 
 address,
@@ -123,13 +123,13 @@ em,
 strong,
 th,
 var {
-    font-style: normal;
-    font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 h1,
@@ -138,25 +138,25 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: 100%;
-    font-weight: normal;
+  font-size: 100%;
+  font-weight: normal;
 }
 
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-    content: "";
+  content: "";
 }
 
 blockquote,
 q {
-    quotes: "" "";
+  quotes: "" "";
 }
 
 abbr,
 acronym {
-    order: 0;
+  order: 0;
 }
 
 //styling the main page
@@ -164,198 +164,198 @@ $main-color: #4e443e;
 $logo-color: #d57934;
 
 header {
-    position: fixed;
-    background-color: white;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 nav {
-    font-size: 0.8rem;
-    display: grid;
-    color: #7a706a;
-    grid-template-columns: repeat(3, 1fr);
-    height: 8vh;
+  font-size: 0.8rem;
+  display: grid;
+  color: #7a706a;
+  grid-template-columns: repeat(3, 1fr);
+  height: 8vh;
 
-    div {
-        display: flex;
-        align-items: center;
-    }
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .logo_img,
 .footer_logo_img {
-    height: 7vh;
-    margin-left: 5px;
+  height: 7vh;
+  margin-left: 5px;
 }
 
 .nav_menu,
 .footer_rights_container {
-    justify-content: center;
+  justify-content: center;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:hover {
-    color: gray;
-    background-color: inherit;
+  color: gray;
+  background-color: inherit;
 }
 
 nav ul,
 footer ul {
-    display: grid;
+  display: grid;
 
-    li {
-        text-align: center;
-    }
+  li {
+    text-align: center;
+  }
 }
 
 .nav_list {
-    grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .login_container,
 .footer_social_container {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .nav_login {
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .footer_rights {
-    grid-template-columns: 0.8fr 1fr 1.6fr;
+  grid-template-columns: 0.8fr 1fr 1.6fr;
 }
 
 .footer_social {
-    grid-template-columns: repeat(4, auto);
-    margin-right: 5px;
-    align-items: center;
+  grid-template-columns: repeat(4, auto);
+  margin-right: 5px;
+  align-items: center;
 
-    i {
-        color: $logo-color;
-        font-size: 0.9rem;
-        margin: 0 5px;
-    }
+  i {
+    color: $logo-color;
+    font-size: 0.9rem;
+    margin: 0 5px;
+  }
 }
 
 .orange_leaf {
-    color: $logo-color;
+  color: $logo-color;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 a:visited {
-    color: $logo-color;
+  color: $logo-color;
 }
 
 main {
-    position: relative;
-    top: 8vh;
-    padding-bottom: 8vh;
+  position: relative;
+  top: 8vh;
+  padding-bottom: 8vh;
 }
 
 footer {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    background-color: $main-color;
-    height: 8vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: $main-color;
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 0.9rem;
 
-    div {
-        display: flex;
-        align-items: center;
-    }
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .card {
-    max-width: 50%;
-    justify-content: center;
-    font-size: 0.8rem;
+  max-width: 50%;
+  justify-content: center;
+  font-size: 0.8rem;
 
-    input[type=text],
-    input[type=text_area],
-    input[type=submit],
-    input[type=number] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        background-color: $logo-color;
-        border-radius: 0.5rem;
-    }
+  input[type=text],
+  input[type=text_area],
+  input[type=submit],
+  input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: $logo-color;
+    border-radius: 0.5rem;
+  }
 
-    input[type=submit] {
-        width: 25%;
-        background-color: $main-color;
-        color: #fff;
-    }
+  input[type=submit] {
+    width: 25%;
+    background-color: $main-color;
+    color: #fff;
+  }
 
-    textarea {
-        width: 100%;
-        height: 70px;
-        padding: 12px 20px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 0.5rem;
-        background-color: $logo-color;
-        resize: none;
-    }
+  textarea {
+    width: 100%;
+    height: 70px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: $logo-color;
+    resize: none;
+  }
 
-    select {
-        height: 4vh;
-        width: 10rem;
-        background-color: $logo-color;
-        border-radius: 0.5rem;
-    }
+  select {
+    height: 4vh;
+    width: 10rem;
+    background-color: $logo-color;
+    border-radius: 0.5rem;
+  }
 }
 
 /* highlight col-* */
 
 .grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-gap: 10px;
-    grid-auto-rows: minmax(180px, auto);
-    grid-auto-flow: dense;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(180px, auto);
+  grid-auto-flow: dense;
+  padding: 10px;
 }
 
 .grid-item {
-    padding: 1rem;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #929796;
-    background-color: #333;
-    border-radius: 5px;
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #929796;
+  background-color: #333;
+  border-radius: 5px;
 
-    &:nth-child(odd) {
-        background-color: #424242;
-    }
+  &:nth-child(odd) {
+    background-color: #424242;
+  }
 }
 
 .span-2 {
-    grid-column-end: span 2;
-    grid-row-end: span 2;
+  grid-column-end: span 2;
+  grid-row-end: span 2;
 }
 
 .span-3 {
-    grid-column-end: span 3;
-    grid-row-end: span 4;
+  grid-column-end: span 3;
+  grid-row-end: span 4;
 }
