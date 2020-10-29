@@ -17,7 +17,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create session" do
     assert_difference('Session.count') do
-      post sessions_url, params: { session: {  } }
+      post sessions_url, params: { session: {} }
     end
 
     assert_redirected_to session_url(Session.last)
@@ -34,7 +34,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update session" do
-    patch session_url(@session), params: { session: {  } }
+    patch session_url(@session), params: { session: {} }
     assert_redirected_to session_url(@session)
   end
 
