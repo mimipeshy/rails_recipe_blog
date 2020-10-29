@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_192509) do
+ActiveRecord::Schema.define(version: 2020_10_29_202010) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +21,11 @@ ActiveRecord::Schema.define(version: 2020_10_28_192509) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -27,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_10_28_192509) do
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_categories", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_recipe_categories_on_article_id"
+    t.index ["category_id"], name: "index_recipe_categories_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_10_28_192509) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "recipe_categories", "articles"
+  add_foreign_key "recipe_categories", "categories"
   add_foreign_key "votes", "articles"
   add_foreign_key "votes", "users"
 end

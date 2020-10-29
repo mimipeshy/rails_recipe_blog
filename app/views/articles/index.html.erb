@@ -1,25 +1,29 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+<% unless @top_article.nil?%>
+<section class="mainpage">
+  <div class="top-article">
+    <%= image_tag @top_article.image.url%>
+      <h2><%=@top_article.title%></h1>
+      <p><%=@top_article.body.truncate(100)%></p>
+  </div> 
+    <div class="category">
+        <%= image_tag @top_cake.image.url %>
+        <h2><%= link_to 'Cakes', category_path(@top_cake.categories.ids[0]) %></h2>
+        <p><%=@top_cake.title%></p>
+      </div>
+          <div class="category">
+        <%= image_tag @top_pastries.image.url %>
+        <h2><%= link_to 'Pastries', category_path(@top_pastries.categories.ids[0]) %></h2>
+        <p><%=@top_pastries.title%></p>
+      </div>
+          <div class="category">
+        <%= image_tag @top_drinks.image.url %>
+        <h2><%= link_to 'Drinks', category_path(@top_drinks.categories.ids[0]) %></h2>
+        <p><%=@top_drinks.title%></p>
+      </div>
+          <div class="category">
+        <%= image_tag @top_food.image.url %>
+        <h2><%= link_to 'Food', category_path(@top_food.categories.ids[0]) %></h2>
+        <p><%=@top_food.title%></p>
+      </div>
+<%end%>

@@ -1,0 +1,28 @@
+<div class="container">
+<h1 class="my-3 font-weight-bold align-items-center">Articles Tagged with <%= @category.name.capitalize %></h1>
+<div class="category_section">
+  <div class="category_article_container">
+  <% counter = 0%>
+        <% row = 1%>
+  <% @category.articles.each do |article| %>
+  <div class="row_<%=row%>_<%=counter%> category_inner_container">   
+    <div class="category_image_container cic_<%=row%>">
+        <%= image_tag article.image.url(:medium)%>
+    </div>
+    <div class="category_article_info cac_<%=row%>">
+      <h3 class="mt-0 text-capitalize"><%=link_to article.title, article_path(article) %></h3>
+      <p class=""> <%= article.body.truncate(300) %></p>
+       <small class="text-monospace"> <%=link_to 'Read More',article_path(article)%></small>
+    </div>
+  </div>
+   <% counter += 1%>
+            <% if counter == 2 && row == 1 %>
+                <% counter = 0 %>
+                <% row = 2%>
+            <% elsif counter == 2 && row == 2 %>
+                <% counter = 0 %>
+                <% row = 1%>
+            <% end %>
+        <% end %>
+</div>
+</div>

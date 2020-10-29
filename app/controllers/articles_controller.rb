@@ -1,34 +1,43 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: %i[show edit update destroy]
+  before_action :authorize, except: %i[index show]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.order('created_at DESC')
+    @top_article = Article.featured_article
+    @top_cake = Article.top_category(1)
+    @top_pastries = Article.top_category(2)
+    @top_drinks = Article.top_category(3)
+    @top_food = Article.top_category(4)
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @user = User.find(@article.user_id)
+    # @comment = Comment.new
+    # @comment.article_id = @article.id
   end
 
   # GET /articles/new
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
-
+    @user = current_user
+    @article = @user.articles.build(article_params)
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        @user.articles << @article
+        format.html { redirect_to @article, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -42,7 +51,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article, notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -56,7 +65,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to articles_url, notice: 'Recipe was deleted.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +79,6 @@ class ArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def article_params
-    params.require(:article).permit(:title, :body, :image)
+    params.require(:article).permit(:title, :body, :image, :category_list)
   end
 end
