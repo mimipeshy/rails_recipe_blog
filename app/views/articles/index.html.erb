@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<% unless @top_article.nil?%>
+<% if @top_article.nil?%>
+<%= flash[:alert] = "no articles have been created yet."%>
+<%else%>
 <section class="mainpage">
   <div class="top-article">
     <%= image_tag @top_article.image.url%>
