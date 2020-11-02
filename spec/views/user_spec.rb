@@ -1,23 +1,5 @@
 require_relative '../rails_helper'
-require_relative 'factory_bot'
-
 RSpec.describe 'Webpage workflow', type: :system do
-  before do
-    FactoryBot.create(:user)
-    FactoryBot.create(:article1)
-    FactoryBot.create(:article2)
-    FactoryBot.create(:article3)
-    FactoryBot.create(:article4)
-    test_category1 = Category.create!(priority: 1, name: 'user_category1')
-    test_category2 = Category.create!(priority: 2, name: 'user_category2')
-    test_category3 = Category.create!(priority: 3, name: 'user_category3')
-    test_category4 = Category.create!(priority: 4, name: 'user_category4')
-    ArticleCategory.create!(article_id: 1, category_id: test_category1.id)
-    ArticleCategory.create!(article_id: 2, category_id: test_category2.id)
-    ArticleCategory.create!(article_id: 3, category_id: test_category3.id)
-    ArticleCategory.create!(article_id: 4, category_id: test_category4.id)
-  end
-
   describe 'Navigate the webpage' do
     it 'User sign-up is correct' do
       # Access Home Page
