@@ -35,7 +35,7 @@ gem 'paperclip-cloudinary'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'bullet', '~> 6.1.0'
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]  
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
 end
 
