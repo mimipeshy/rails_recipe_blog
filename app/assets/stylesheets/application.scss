@@ -14,6 +14,7 @@
  *= require_self
  */
 @import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
 
 html,
 body,
@@ -162,18 +163,21 @@ acronym {
 //styling the main page
 $main-color: #4e443e;
 $logo-color: #d57934;
+$font-family: 'Viga', sans-serif;
+
 
 header {
-  position: fixed;
+  position: absolute;
   background-color: white;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  font-family: $font-family;
 }
 
 nav {
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-family: $font-family;
   display: grid;
   color: #7a706a;
   grid-template-columns: repeat(3, 1fr);

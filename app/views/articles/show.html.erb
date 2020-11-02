@@ -10,19 +10,9 @@
           <%=@user.name %>
       </p>
        <%= render 'categories/like'%>
-  <p>
-  <p>
-  <strong>Category: </strong>
-  <% @article.categories.each do |tag| %>
-      <%= link_to tag.name, category_path(tag) %>
-    <% end %>
-  </p>
- <%= link_to 'Back', articles_path %> 
-   <h3>Comments (<%= @article.comments.size %>)</h3> 
-  <%= render partial: 'comments/form' %>
-  </div>
-  
+    <p>
+  <h3>Has (<%= @article.votes.size %>) votes</h3> 
+  <%= render partial: 'articles/category' %>    
 </div>
-
 </div>
 
