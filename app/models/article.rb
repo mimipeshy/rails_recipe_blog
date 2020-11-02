@@ -7,7 +7,8 @@ class Article < ApplicationRecord
   has_attached_file :image,
                     storage: :cloudinary,
                     path: ':id/:style/:filename',
-                    styles: { medium: '300x300>', thumb: '100x100>' }
+                    styles: { medium: '300x300>', thumb: '100x100>' },
+                    default_url: '/app/assets/images/missing.png'
   validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png']
   validates :title, presence: true, length: { maximum: 50,
                                               too_long: 'Title can be maximum 50 characters long.' }

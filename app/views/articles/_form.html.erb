@@ -25,7 +25,7 @@
           <%= f.text_area :body %>
       </div>
       <div class="md-form mt-4">
-         <%=image_tag@article.image.url %><br/>
+        <%= image_tag @article.image.url %><br/>
         <%= f.label :image, "Attach an Image" %><br/>
         <%= f.file_field :image %>
       </div>
