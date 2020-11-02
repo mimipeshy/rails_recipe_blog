@@ -2,7 +2,7 @@ require_relative '../rails_helper'
 RSpec.describe 'Webpage workflow', type: :system do
   describe 'Write an article' do
     it 'path is correct' do
-      #Access Home Page
+      # Access Home Page
       visit new_user_path
       sleep 2
       # Go to Sign Up page
@@ -18,7 +18,7 @@ RSpec.describe 'Webpage workflow', type: :system do
       click_button('login')
       # sleep 2
       click_link('WRITE A RECIPE')
-     # sleep 2
+      # sleep 2
       fill_in('article[title]', with: 'test title')
       # sleep 1
       fill_in('article[body]', with: 'test text for test article')

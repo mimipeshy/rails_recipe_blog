@@ -16,5 +16,5 @@ RSpec.describe 'Webpage workflow', type: :system do
       sleep 2
       click_link('Log Out')
     end
-  end  
+  end
 end

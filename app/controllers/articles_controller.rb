@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order('created_at DESC')
+    @articles = Article.all.order('created_at DESC').includes(:name)
     @top_article = Article.featured_article
     @top_cake = Article.top_category(1)
     @top_pastries = Article.top_category(2)
