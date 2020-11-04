@@ -14,7 +14,7 @@ class VotesController < ApplicationController
   def destroy
     @vote = Vote.find_by(id: params[:id], user: User.find(session['user_id']), article_id: params[:article_id])
     return unless @vote
-     
+
     @vote.destroy
     redirect_to article_path(@vote.article_id), notice: 'Vote removed!'
   end
