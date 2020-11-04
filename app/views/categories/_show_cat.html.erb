@@ -15,14 +15,6 @@
        <small class="text-monospace"> <%=link_to 'Read More',article_path(article)%></small>
     </div>
   </div>
-   <% counter += 1%>
-            <% if counter == 2 && row == 1 %>
-                <% counter = 0 %>
-                <% row = 2%>
-            <% elsif counter == 2 && row == 2 %>
-                <% counter = 0 %>
-                <% row = 1%>
-            <% end %>
-        <% end %>
+  <%render 'counter'%>
 </div>
 </div>
