@@ -14,7 +14,7 @@ $main-color: #4e443e;
 
 .category_image_container {
   height: 42vh;
-  max-width: 50%;
+  max-width: 100%;
   min-width: 50%;
 
   img {
@@ -65,4 +65,46 @@ $main-color: #4e443e;
 .row_2_0,
 .row_2_1 {
   flex-direction: row-reverse;
+}
+
+.category__container {
+  position: relative;
+  height: auto;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px);
+}
+
+.text-break {
+  white-space: pre-wrap;
+}
+
+.category-row {
+  height: 50vh;
+}
+
+.article-container {
+  position: relative;
+  height: 150px;
+}
+
+.article-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px), linear-gradient(to top, white, rgba(255, 255, 255, 0.534));
+}
+
+.article-content-height {
+  height: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .article-content-height {
+    height: 50%;
+  }
+
+  .category-row {
+    height: 100vh;
+  }
 }

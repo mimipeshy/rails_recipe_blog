@@ -1,5 +1,5 @@
 Rails.application.configure do
-  Bullet.alert = true
+  Bullet.alert = false
   Bullet.bullet_logger = true
   config.after_initialize do
     #Enable bullet in your application

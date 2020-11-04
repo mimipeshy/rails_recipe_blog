@@ -1,20 +1,11 @@
-<div class="container">
-<h1 class="my-3 font-weight-bold align-items-center">Articles Tagged with <%= @category.name %></h1>
 <div class="category_section">
-  <div class="category_article_container">
-  <% counter = 0%>
-        <% row = 1%>
-  <% @category_articles.each do |article| %>
-  <div class="row_<%=row%>_<%=counter%> category_inner_container">   
-    <div class="category_image_container cic_<%=row%>">
-        <%= image_tag article.image.url(:medium)%>
+<div class="d-flex flex-wrap col-12 px-5 mt-2 category_article_container">
+  <% @category_articles.each_with_index do |article,index |%>
+    <div class="row col-12 col-lg-6 px-1 category_inner_container category_image_container cic_">
+   
+      <%= category_view_pattern(index, article, @category)%>
+ 
     </div>
-    <div class="category_article_info cac_<%=row%>">
-      <h3 class="mt-0 text-capitalize"><%=link_to article.title, article_path(article) %></h3>
-      <p class=""> <%= article.body.truncate(300) %></p>
-       <small class="text-monospace"> <%=link_to 'Read More',article_path(article)%></small>
-    </div>
+  <%end%>
   </div>
-  <%render 'counter'%>
-</div>
 </div>
