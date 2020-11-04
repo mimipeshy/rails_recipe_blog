@@ -1,10 +1,10 @@
 <div class="container">
-<h1 class="my-3 font-weight-bold align-items-center">Articles Tagged with <%= @category.name.capitalize %></h1>
+<h1 class="my-3 font-weight-bold align-items-center">Articles Tagged with <%= @category.name %></h1>
 <div class="category_section">
   <div class="category_article_container">
   <% counter = 0%>
         <% row = 1%>
-  <% @category.articles.each do |article| %>
+  <% @category_articles.each do |article| %>
   <div class="row_<%=row%>_<%=counter%> category_inner_container">   
     <div class="category_image_container cic_<%=row%>">
         <%= image_tag article.image.url(:medium)%>

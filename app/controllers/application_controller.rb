@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   protect_from_forgery with: :exception
-
+ 
   private
 
   def current_user
@@ -12,4 +12,6 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_url, alert: 'Not authorized' if current_user.nil?
   end
+
+ 
 end
