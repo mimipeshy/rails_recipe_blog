@@ -1,0 +1,18 @@
+<div class= "container">
+<p id="notice"><%= notice %></p>
+<div class="media mt-5">
+  <%= image_tag @article.image.url(:medium), class:'d-flex mr-3' %>
+  <div class="media-body">
+    <h5 class="mt-0 mb-3 font-weight-bold"><%= @article.title.capitalize %></h5>
+      <p><%= @article.body%></p>
+      <p class="mt-2">
+        <strong>Recipe by:</strong>
+          <%=@user.name %>
+      </p>
+       <%= render 'categories/like'%>
+    <p>
+  <h3>Has (<%= @article.votes.size %>) votes</h3> 
+  <%= render partial: 'articles/category' %>    
+</div>
+</div>
+

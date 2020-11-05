@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="comments">
+        <div class="comments-details">
+          <div class="comments comment-box replied">
+            <span class="commenter-pic">
+              <a href="#"><%= image_tag("user-icon.png", :alt => "user-icon", :class => "logo_img")%></a>
+            </span>
+            <span class="commenter-name">
+             Author:  <%= comment.name %></span>
+            </span>       
+            <p class="comment-txt more p-2"><%=link_to comment.body %></p>
+            <p class="comment-txt p-2">Posted:<%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> ago</p>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+ </div>

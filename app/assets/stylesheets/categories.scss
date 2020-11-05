@@ -1,0 +1,110 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Within style tags in your html file
+
+$logo-color: #d57934;
+$main-color: #4e443e;
+
+.category_article_container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 42vh;
+}
+
+.category_image_container {
+  height: 42vh;
+  max-width: 100%;
+  min-width: 50%;
+
+  img {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+
+.category_article_info {
+  width: 100%;
+  padding: 15px;
+
+  h3 {
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+
+  p {
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 1px;
+  }
+
+  a {
+    padding: 4px;
+    margin: 20px;
+    color: $logo-color;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    text-decoration: underline;
+  }
+}
+
+.category_inner_container {
+  display: flex;
+  height: 40vh;
+}
+
+.row_2_0,
+.row_2_1 {
+  flex-direction: row-reverse;
+}
+
+.category__container {
+  position: relative;
+  height: auto;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px);
+}
+
+.text-break {
+  white-space: pre-wrap;
+}
+
+.category-row {
+  height: 50vh;
+}
+
+.article-container {
+  position: relative;
+  height: 150px;
+}
+
+.article-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px), linear-gradient(to top, white, rgba(255, 255, 255, 0.534));
+}
+
+.article-content-height {
+  height: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .article-content-height {
+    height: 50%;
+  }
+
+  .category-row {
+    height: 100vh;
+  }
+}

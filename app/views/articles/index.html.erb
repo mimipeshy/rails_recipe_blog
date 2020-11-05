@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<% if @top_article.nil?%>
+<%= flash[:alert] = "No articles have been created yet."%>
+<%else%>
+<section class="mainpage">
+  <div class="top-article">
+    <%= image_tag @top_article.image.url%>
+      <h2><%=@top_article.title%></h1>
+      <p><%=@top_article.body.truncate(100)%></p>
+  </div> 
+    <div class="category">
+        <%= image_tag @top_cake.image.url %>
+        <h2><%= link_to 'Cakes', category_path(@top_cake.categories.ids[0]) %></h2>
+        <p><%=@top_cake.title%></p>
+      </div>
+          <div class="category">
+        <%= image_tag @top_pastries.image.url %>
+        <h2><%= link_to 'Pastries', category_path(@top_pastries.categories.ids[0]) %></h2>
+        <p><%=@top_pastries.title%></p>
+      </div>
+          <div class="category">
+        <%= image_tag @top_drinks.image.url %>
+        <h2><%= link_to 'Drinks', category_path(@top_drinks.categories.ids[0]) %></h2>
+        <p><%=@top_drinks.title%></p>
+      </div>
+        <div class="category">
+        <%= image_tag @top_food.image.url %>
+        <h2><%= link_to 'Food', category_path(@top_food.categories.ids[0]) %></h2>
+        <p><%=@top_food.title%></p>
+      </div>
+<%end%>
